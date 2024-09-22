@@ -16,20 +16,20 @@ export const Section1 = () => {
   const image = useRef()
 
   useEffect(() => {
-    gsap.set(imageRef1.current, { yPercent: 50, opacity: 0 })
-    gsap.set(imageRef2.current, { yPercent: 50, opacity: 0 })
-    gsap.set(imageRef3.current, { yPercent: 50, opacity: 0 })
-    gsap.set(imageRef4.current, { yPercent: 50, opacity: 0 })
-  })
+    gsap.set(imageRef1.current, { yPercent: 50 })
+    gsap.set(imageRef2.current, { yPercent: 50 })
+    gsap.set(imageRef3.current, { yPercent: 50 })
+    gsap.set(imageRef4.current, { yPercent: 50 })
+  }, [])
 
   useLayoutEffect(() => {
     const split = new SplitText(titleRef.current, { type: "chars" });
     gsap.set(split.chars, { opacity: 0 })
     gsap.fromTo(split.chars, { 'will-change': 'opacity, transform', opacity: 0, scale: 0.6, rotationZ: () => gsap.utils.random(-20,20)}, { ease: 'power4', opacity: 1, scale: 1, rotation: 0, stagger: 0.065 });
-    gsap.fromTo(imageRef1.current, { yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 0.75, ease: "power2" })
-    gsap.fromTo(imageRef2.current, { yPercent: 50 }, { delay: 0.2, opacity: 1, yPercent: 0, duration: 0.5, ease: "power2" })
-    gsap.fromTo(imageRef3.current, { yPercent: 50 }, { delay: 0.35, opacity: 1, yPercent: 0, duration: 0.5, ease: "power2" })
-    gsap.fromTo(imageRef4.current, { yPercent: 50 }, { delay: 0.5, opacity: 1, yPercent: 0, duration: 0.5, ease: "power2" })
+    gsap.fromTo(imageRef1.current, { yPercent: 50 }, { yPercent: 0, duration: 0.75, ease: "power2" })
+    gsap.fromTo(imageRef2.current, { yPercent: 50 }, { delay: 0.2, yPercent: 0, duration: 0.5, ease: "power2" })
+    gsap.fromTo(imageRef3.current, { yPercent: 50 }, { delay: 0.35, yPercent: 0, duration: 0.5, ease: "power2" })
+    gsap.fromTo(imageRef4.current, { yPercent: 50 }, { delay: 0.5, yPercent: 0, duration: 0.5, ease: "power2" })
   }, [])
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const Section1 = () => {
     gsap.fromTo(imageRef2.current, { yPercent: 0 }, { yPercent: 5, scrollTrigger: { trigger: ".one-image-trigger", start: "top bottom", end: "bottom top", scrub: true } })
     gsap.fromTo(imageRef3.current, { yPercent: 0 }, { yPercent: 0, scrollTrigger: { trigger: ".one-image-trigger", start: "top bottom", end: "bottom top", scrub: true } })
     gsap.fromTo(imageRef4.current, { yPercent: 0 }, { yPercent: 15, scrollTrigger: { trigger: ".one-image-trigger", start: "top bottom", end: "bottom top", scrub: true } })
-  })
+  }, [])
 
   const handleMouseMove = (event) => {
     // Check if the screen width is greater than a mobile device threshold
