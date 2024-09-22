@@ -15,8 +15,16 @@ export const Section1 = () => {
   const imageRef4 = useRef()
   const image = useRef()
 
+  useEffect(() => {
+    gsap.set(imageRef1.current, { yPercent: 50 })
+    gsap.set(imageRef2.current, { yPercent: 50 })
+    gsap.set(imageRef3.current, { yPercent: 50 })
+    gsap.set(imageRef4.current, { yPercent: 50 })
+  })
+
   useLayoutEffect(() => {
     const split = new SplitText(titleRef.current, { type: "chars" });
+    gsap.set(split.chars, { opacity: 0 })
     gsap.fromTo(split.chars, { 'will-change': 'opacity, transform', opacity: 0, scale: 0.6, rotationZ: () => gsap.utils.random(-20,20)}, { ease: 'power4', opacity: 1, scale: 1, rotation: 0, stagger: 0.065 });
     gsap.fromTo(imageRef1.current, { yPercent: 50 }, { yPercent: 0, duration: 0.75, ease: "power2" })
     gsap.fromTo(imageRef2.current, { yPercent: 50 }, { delay: 0.2, yPercent: 0, duration: 0.5, ease: "power2" })
