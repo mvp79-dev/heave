@@ -3,6 +3,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ReactLenis, useLenis } from 'lenis/react'
 import { Section1 } from "./Section1";
 import "./main.css";
+import { Section2 } from "./Section2";
 
 const Main = () => {
 
@@ -27,6 +28,7 @@ const Main = () => {
   return (
     <ReactLenis root>
       <Section1 />
+      <Section2 />
     </ReactLenis>
   );
 };

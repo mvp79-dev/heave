@@ -16,6 +16,8 @@
     flex-direction: column;
     position: relative;
     padding-top: 30vh;
+    overflow: hidden;
+    perspective: 10000px;
 }
 
 .one-content {
@@ -26,6 +28,7 @@
     align-items: center;
     color: white;
     gap: 15vh;
+    perspective: 10000px;
 }
 
 .one-content-textbox {
@@ -38,10 +41,33 @@
 .one-image {
     width: 100%;
     height: fit-content;
+    position: relative;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
 }
 
 .one-image-img {
-    width: 100%;
+    width: 103%;
     height: fit-content;
     object-fit: cover;
+    position: absolute;
+}
+
+.one-gradient-background {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #111111 100%);
+    z-index: 1;
+}
+
+.one-image-trigger {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
 }
