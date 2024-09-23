@@ -48,7 +48,7 @@
 }
 
 .one-image-img {
-    width: 103%;
+    width: 100%;
     height: fit-content;
     object-fit: cover;
     position: absolute;

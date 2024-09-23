@@ -23,7 +23,7 @@ export const Navigation = () => {
     }, []);
 
     useLayoutEffect(() => {
-        gsap.fromTo(navigationBar.current, { yPercent: -100, opacity: 0 }, { delay: 1, yPercent: 0, opacity: 1, duration: 0.5 })
+        gsap.fromTo(navigationBar.current, { yPercent: -100, opacity: 0 }, { delay: 3.5, yPercent: 0, opacity: 1, duration: 0.5 })
     }, [])
 
     const handleMenuClick = () => {

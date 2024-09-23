@@ -6,31 +6,29 @@ import Image from "next/image";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
-export const Section1 = () => {
+export const Section1 = ({loadingAnimationFinished}) => {
 
   const titleRef= useRef()
   const imageRef1 = useRef()
   const imageRef2 = useRef()
   const imageRef3 = useRef()
   const imageRef4 = useRef()
-  const image = useRef()
+
+  gsap.set(imageRef1.current, { yPercent: 50 });
+  gsap.set(imageRef2.current, { yPercent: 50 });
+  gsap.set(imageRef3.current, { yPercent: 50 });
+  gsap.set(imageRef4.current, { yPercent: 50 });
 
   useEffect(() => {
-    gsap.set(imageRef1.current, { yPercent: 50 })
-    gsap.set(imageRef2.current, { yPercent: 50 })
-    gsap.set(imageRef3.current, { yPercent: 50 })
-    gsap.set(imageRef4.current, { yPercent: 50 })
-  }, [])
-
-  useLayoutEffect(() => {
-    const split = new SplitText(titleRef.current, { type: "chars" });
-    gsap.set(split.chars, { opacity: 0 })
-    gsap.fromTo(split.chars, { 'will-change': 'opacity, transform', opacity: 0, scale: 0.6, rotationZ: () => gsap.utils.random(-20,20)}, { ease: 'power4', opacity: 1, scale: 1, rotation: 0, stagger: 0.065 });
-    gsap.fromTo(imageRef1.current, { yPercent: 50 }, { yPercent: 0, duration: 0.75, ease: "power2" })
-    gsap.fromTo(imageRef2.current, { yPercent: 50 }, { delay: 0.2, yPercent: 0, duration: 0.5, ease: "power2" })
-    gsap.fromTo(imageRef3.current, { yPercent: 50 }, { delay: 0.35, yPercent: 0, duration: 0.5, ease: "power2" })
-    gsap.fromTo(imageRef4.current, { yPercent: 50 }, { delay: 0.5, yPercent: 0, duration: 0.5, ease: "power2" })
-  }, [])
+    if (loadingAnimationFinished) {
+      const split = new SplitText(titleRef.current, { type: "chars" });
+      gsap.fromTo(split.chars, { 'will-change': 'opacity, transform', opacity: 0, scale: 0.6, rotationZ: () => gsap.utils.random(-20,20)}, { ease: 'power4', opacity: 1, scale: 1, rotation: 0, stagger: 0.065 });
+      gsap.fromTo(imageRef1.current, { yPercent: 50 }, { yPercent: 0, duration: 0.75, ease: "power2" })
+      gsap.fromTo(imageRef2.current, { yPercent: 50 }, { delay: 0.2, yPercent: 0, duration: 0.5, ease: "power2" })
+      gsap.fromTo(imageRef3.current, { yPercent: 50 }, { delay: 0.35, yPercent: 0, duration: 0.5, ease: "power2" })
+      gsap.fromTo(imageRef4.current, { yPercent: 50 }, { delay: 0.5, yPercent: 0, duration: 0.5, ease: "power2" })
+    }
+  }, [loadingAnimationFinished])
 
   useEffect(() => {
     gsap.fromTo(imageRef1.current, { yPercent: 0 }, { yPercent: -5, scrollTrigger: { trigger: ".one-image-trigger", start: "top bottom", end: "bottom top", scrub: true } })
@@ -39,26 +37,6 @@ export const Section1 = () => {
     gsap.fromTo(imageRef4.current, { yPercent: 0 }, { yPercent: 15, scrollTrigger: { trigger: ".one-image-trigger", start: "top bottom", end: "bottom top", scrub: true } })
   }, [])
 
-  const handleMouseMove = (event) => {
-    // Check if the screen width is greater than a mobile device threshold
-    if (window.innerWidth > 768) {
-      const x = event.clientX - window.innerWidth / 2;
-      const y = event.clientY - window.innerHeight / 2;
-      const rotateX = (y / window.innerHeight) * 20; // Adjust rotation scale as needed
-      const rotateY = (x / window.innerWidth) * 20; // Adjust rotation scale as needed
-
-      image.current.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    }
-  };
-
-  useEffect(() => {
-    document.body.addEventListener("mousemove", handleMouseMove);
-    // Cleanup the event listener on component unmount
-    return () => {
-      document.body.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
   return (
     <section className="section one">
       <div className="one-content">
@@ -66,7 +44,7 @@ export const Section1 = () => {
           <h1 className="headline" ref={titleRef} >We Create <span className="blue" >Brands</span></h1>
           {/* <p className="description" >We elevate brands through viral marketing strategies we’ve mastered in the past. </p> */}
         </div>
-        <div className="one-image" ref={image}>
+        <div className="one-image">
           <Image src="/images/main1.png" className="one-image-img" ref={imageRef1} width={2000} height={2000} alt="Main Image" />
           <Image src="/images/main3.png" className="one-image-img" ref={imageRef2} width={2000} height={2000} alt="Main Image" />
           <Image src="/images/main2.png" className="one-image-img" ref={imageRef3} width={2000} height={2000} alt="Main Image" />

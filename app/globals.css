@@ -117,26 +117,32 @@ body {
 
 /* LOADING SCREEN */
 
-.loading-screen {
-  width: 100vw;
+.loading-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100vh;
-  background-color: #fefffe;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loading-video-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.loading-screen-line {
-  width: 30vw;
-  height: 0.5vh;
-  overflow: hidden;
-  display: flex;
-}
-
-.loading-screen-line-inside {
+.loading-video-content-video {
   width: 100%;
   height: 100%;
-  background-color: #010100;
+  object-fit: cover;
 }
 
 /* NAVIGATION */
