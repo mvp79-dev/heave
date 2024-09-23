@@ -43,8 +43,7 @@ export const Section1 = ({loadingAnimationFinished}) => {
     <section className="section one">
       <div className="one-content">
         <div className="one-content-textbox">
-          <h1 className="headline" ref={titleRef} >We Create <span className="blue" >Brands</span></h1>
-          {/* <p className="description" >We elevate brands through viral marketing strategies we’ve mastered in the past. </p> */}
+          <h1 className="headline one-headline" ref={titleRef} >We Create <span className="blue" >Brands</span></h1>
         </div>
         <div className="one-image">
           <Image src="/images/main1.png" className="one-image-img" ref={imageRef1} width={2000} height={2000} alt="Main Image" />

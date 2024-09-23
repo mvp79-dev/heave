@@ -16,7 +16,7 @@ body,
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #111111;
+  background-color: black;
 }
 
 ::-webkit-scrollbar {
@@ -27,6 +27,12 @@ body {
 }
 ::-webkit-scrollbar-track {
   background-color: #fefffe;
+}
+
+.section-border {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff35;
 }
 
 /* COLORS */
@@ -66,10 +72,10 @@ body {
 }
 
 .subheadline {
-  font-size: 4.5vw;
+  font-size: 3.5vw;
   margin: 0;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 115%;
 }
 
 .headline-container {
@@ -104,7 +110,7 @@ body {
 }
 
 .description {
-  font-size: 1.25vw;
+  font-size: 1vw;
   font-weight: 400;
   margin: 0;
 }
@@ -297,25 +303,9 @@ body {
   transform: translateY(-100%);
 }
 
-/* PRIVACY POLYCY */
+/* OTHER */
 
-.privacy-policy {
-  padding: 14vh 7.5vw;
-  height: fit-content;
-  background-color: #fefffe;
-}
 
-.privacy-policy-content {
-  display: flex;
-  flex-direction: column;
-  gap: 5vh;
-}
-
-.privacy-item {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5vh;
-}
 
 @media (max-width: 768px) {
 

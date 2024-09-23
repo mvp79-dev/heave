@@ -60,7 +60,7 @@
     left: 0;
     width: 100%;
     height: 30vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #111111 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, black 100%);
     z-index: 1;
 }
 
@@ -71,3 +71,153 @@
     width: 100%;
     height: 100vh;
 }
+
+/* 2 */
+
+.two {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20vh 7.5vw;
+}
+
+.two-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    color: white;
+    gap: 7.5vw;
+    padding-top: 20vh;
+}
+
+.two-content-left {
+    width: 100%;
+    height: fit-content;
+}
+
+.two-content-right {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-shrink: 0;
+}
+
+/* 3 */
+
+.three {
+    padding: 20vh 0;
+    overflow: hidden;
+    position: relative;
+} 
+
+.parallax {
+    overflow: hidden;
+    letter-spacing: 0;
+    line-height: 1.5;
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+}
+  
+.parallax .scroller {
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.scroller-div {
+    width: 20vw;
+    height: fit-content;
+    margin-right: 2vw;
+}
+
+.scroller-image {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+}
+
+.three-left-gradient {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10vw;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, black 100%);
+    z-index: 1;
+}
+
+.three-right-gradient {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10vw;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, black 100%);
+    z-index: 1;
+}
+
+/* 4 */
+
+.four {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 7.5vw;
+}
+
+.four-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+}
+
+.four-content-frame {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.four-video {
+    width: 100%;
+    height: 115%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+}
+
+/* 4 */
+
+.five {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 7.5vw;
+    padding-top: 20vh;
+}
+
+.five-content {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    text-align: left;
+    padding-bottom: 20vh;
+}
+
