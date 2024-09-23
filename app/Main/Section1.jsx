@@ -18,9 +18,11 @@ export const Section1 = ({loadingAnimationFinished}) => {
   gsap.set(imageRef2.current, { yPercent: 50 });
   gsap.set(imageRef3.current, { yPercent: 50 });
   gsap.set(imageRef4.current, { yPercent: 50 });
+  gsap.set(titleRef.current, { opacity: 0 });
 
   useEffect(() => {
     if (loadingAnimationFinished) {
+      gsap.set(titleRef.current, { opacity: 1 });
       const split = new SplitText(titleRef.current, { type: "chars" });
       gsap.fromTo(split.chars, { 'will-change': 'opacity, transform', opacity: 0, scale: 0.6, rotationZ: () => gsap.utils.random(-20,20)}, { ease: 'power4', opacity: 1, scale: 1, rotation: 0, stagger: 0.065 });
       gsap.fromTo(imageRef1.current, { yPercent: 50 }, { yPercent: 0, duration: 0.75, ease: "power2" })
