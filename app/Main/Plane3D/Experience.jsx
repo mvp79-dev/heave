@@ -6,16 +6,17 @@ import SplitText from "gsap/src/SplitText";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Model from "./Model";
 import { useThree } from "@react-three/fiber";
-import Loading from "@/app/loading";
 
 gsap.registerPlugin(SplitText, ScrollTrigger);
 
 export const Experience = () => {
 
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
+    <Canvas camera={{ position: [2, 2, 5], fov: 35 }}>
         <Suspense >
-          <Model />
+            <Float>
+                <Model />
+            </Float>
         </Suspense>
         <Environment preset="studio" environmentIntensity={0.75} />
         <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} enableRotate={true} enablePan={false} />
