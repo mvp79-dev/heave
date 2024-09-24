@@ -99,6 +99,7 @@ export const Section6 = () => {
           <div className="six-slider-item" ></div>
           <div className="six-slider-item" ></div>
           <div className="six-slider-item" ></div>
+          <div className="six-slider-padding" ></div>
         </div>
       </div>
     </section>

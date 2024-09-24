@@ -14,10 +14,10 @@ export const Section1 = ({loadingAnimationFinished}) => {
   const imageRef3 = useRef()
   const imageRef4 = useRef()
 
-  gsap.set(imageRef1.current, { yPercent: 50 });
-  gsap.set(imageRef2.current, { yPercent: 50 });
-  gsap.set(imageRef3.current, { yPercent: 50 });
-  gsap.set(imageRef4.current, { yPercent: 50 });
+  gsap.set(imageRef1.current, { yPercent: 50, zIndex: 1 });
+  gsap.set(imageRef2.current, { yPercent: 50, zIndex: 1 });
+  gsap.set(imageRef3.current, { yPercent: 50, zIndex: 1 });
+  gsap.set(imageRef4.current, { yPercent: 50, zIndex: 1 });
   gsap.set(titleRef.current, { opacity: 0 });
 
   useEffect(() => {

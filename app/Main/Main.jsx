@@ -50,8 +50,11 @@ const Main = () => {
 
   return (
     <ReactLenis root>
-      <section className="section loading-video" ref={sectionRef} >
+      <section className="loading-video" ref={sectionRef} >
         <div className="loading-video-content">
+          <div className="loading-video-bottom-fade" />
+          <div className="loading-video-left-fade" />
+          <div className="loading-video-right-fade" />
           <video src="/videos/loadingvideo.mp4" className="loading-video-content-video" autoPlay="autoplay" muted playsInline="true" data-wf-ignore="true" preload="auto" />
         </div>
       </section>
