@@ -63,7 +63,7 @@ const Main = () => {
       <Section4 />
       <Section5 />
       <Section3 />
-      <Section6 />
+      {/* <Section6 /> */}
       <Section7 />
       <Section8 />
     </ReactLenis>
