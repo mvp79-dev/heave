@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ReactLenis, useLenis } from 'lenis/react'
 import { Section1 } from "./Section1";
@@ -11,6 +11,7 @@ import { Section5 } from "./Section5";
 import { Section6 } from "./Section6";
 import { Section7 } from "./Section7";
 import { Section8 } from "./Section8";
+import { Experience } from "./Plane3D/Experience";
 
 const Main = () => {
 
@@ -58,6 +59,11 @@ const Main = () => {
           <video src="/videos/loadingvideo.mp4" className="loading-video-content-video" autoPlay="autoplay" muted playsInline="true" data-wf-ignore="true" preload="auto" />
         </div>
       </section>
+      <div className="main-experience">
+        <Suspense >
+          <Experience />
+        </Suspense>
+      </div>
       <Section1 loadingAnimationFinished={loadingAnimationFinished} />
       <Section2 />
       <Section4 />
@@ -65,7 +71,7 @@ const Main = () => {
       <Section3 />
       {/* <Section6 /> */}
       <Section7 />
-      <Section8 />
+      {/* <Section8 /> */}
     </ReactLenis>
   );
 };

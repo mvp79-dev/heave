@@ -25,26 +25,29 @@ export default function Model(props) {
         let { isMobile, isDesktop } = context.conditions;
   
         tl
-        .to(model.current.position, {
-            x: 5,
-            scrollTrigger: {
-              trigger: ".eight",
-              start: "top bottom",
-              end: "bottom top",
-              scrub: true,
-              immediateRender: false,
-            },
-        })
+        // .to(model.current.position, {
+        //     x: 5,
+        //     scrollTrigger: {
+        //       trigger: ".eight",
+        //       start: "top bottom",
+        //       end: "bottom top",
+        //       scrub: true,
+        //       immediateRender: false,
+        //     },
+        // })
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   return (
-    <group {...props} dispose={null} ref={model} scale={0.25} position={[-5, 0, 0]} >
+    <group {...props} dispose={null} ref={model} >
       <mesh
+        castShadow
+        receiveShadow
         geometry={nodes.paper_plane_asset.geometry}
         material={materials.Paper_my}
-        rotation={[Math.PI / 2, 0, 0]}
+        position={[0, 0, 0]}
+        scale={0.25}
       />
     </group>
   )
