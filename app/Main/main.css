@@ -5,16 +5,17 @@
     height: 100vh;
     pointer-events: all;
     background-color: transparent;
+    z-index: 2;
 }
 
 .main-experience {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 5;
     pointer-events: none;
+    z-index: 2;
 }
 
 /* 1 */
@@ -27,7 +28,7 @@
     position: relative;
     padding-top: 30vh;
     overflow: hidden;
-    perspective: 10000px;
+    pointer-events: all;
 }
 
 .one-content {
@@ -38,7 +39,6 @@
     align-items: center;
     color: white;
     gap: 15vh;
-    perspective: 10000px;
 }
 
 .one-content-textbox {
@@ -91,6 +91,7 @@
     flex-direction: column;
     position: relative;
     padding: 20vh 7.5vw;
+    pointer-events: all;
 }
 
 .two-content {
@@ -261,7 +262,7 @@
     counter-increment: gallery-cell;
     display: flex;
     border-radius: 15px;
-    background-color: #ffffff25;
+    background-color: rgba(255, 255, 255, 0.075);
 }
 
 /* 7 */
@@ -289,7 +290,7 @@
     width: 20vw;
     height: 30vh;
     border-radius: 15px;
-    background-color: #ffffff25;
+    background-color: rgba(255, 255, 255, 0.075);
 }
 
 .seven-content-item-box {
@@ -301,18 +302,124 @@
 /* 8 */
 
 .eight {
-    height: 200vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    padding: 0vh 0vw;
+    height: 275vh;
     position: relative;
+    overflow: visible;
 }
-
-.eight-experience {
-    width: 100%;
-    height: 100vh;
-    position: sticky;
+  
+/* .eight-content-gradient {
+    width: 85vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 7.5vw;
+    right: 7.5vw;
+    z-index: 0;
+    pointer-events: none;
+}
+  
+.eight-content-gradient::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, black 0%, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0) 90%, black 100%);
+    pointer-events: none;
+    z-index: 1;
+} */
+  
+.eight-sticky {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* h-screen */
+    padding-top: 30vh;
+    overflow: hidden; /* overflow-hidden */
 }
+  
+.eight-sticky-text-contents {
+    position: absolute;
+    top: 15vh;
+    left: 7.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5vh;
+}
+  
+.eight-sticky-content {
+    display: flex;
+    gap: 2vw;
+}
+  
+.eight-card {
+    width: 40vw;
+    height: 60vh;
+    border-radius: 15px;
+    display: flex;
+    padding: 2vw;
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.eight-card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2vw;
+}
+
+.eight-card-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.eight-card-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eight-card-invisible {
+    width: 6.5vw;
+}
+
+/* 9 */
+
+.nine {
+    padding: 10vh 7.5vw;
+    height: fit-content;
+    position: relative;
+    z-index: 3;
+    pointer-events: all;
+}
+  
+.nine-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 5vh;
+}
+
+.nine-content-questions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 2.5vh;
+  }
+
+  .nine-arrow {
+    width: 3vw;
+    height: 2vw;
+    color: black;
+  }

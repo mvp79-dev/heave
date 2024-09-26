@@ -25,22 +25,43 @@ export default function Model(props) {
         let { isMobile, isDesktop } = context.conditions;
   
         tl
-        // .to(model.current.position, {
-        //     x: 5,
-        //     scrollTrigger: {
-        //       trigger: ".eight",
-        //       start: "top bottom",
-        //       end: "bottom top",
-        //       scrub: true,
-        //       immediateRender: false,
-        //     },
-        // })
+        .to(model.current.position, {
+            x: 8,
+            scrollTrigger: {
+              trigger: ".two",
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+              immediateRender: false,
+            },
+        })
+        .to(model.current.rotation, {
+          y: Math.PI * 1,
+          z: Math.PI * -0.1,
+          scrollTrigger: {
+            trigger: ".four",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            immediateRender: false,
+          },
+        })
+        .to(model.current.position, {
+          x: -8,
+          scrollTrigger: {
+            trigger: ".five",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+            immediateRender: false,
+          },
+      })
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
   return (
-    <group {...props} dispose={null} ref={model} >
+    <group {...props} dispose={null} ref={model} position={[-8, 0, 0]} rotation={[0, 0, 0]} >
       <mesh
         castShadow
         receiveShadow

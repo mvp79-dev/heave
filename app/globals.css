@@ -78,25 +78,8 @@ body {
   line-height: 115%;
 }
 
-.headline-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.headline-container-text {
-  height: fit-content;
-  width: fit-content;
-  overflow: hidden;
-}
-.headline-container-text h1 {
-  font-size: 3.75vw;
-  margin: 0;
-  font-weight: 400;
-  line-height: 110%;
-}
-
 .small-subheadline {
-  font-size: 3.75vw;
+  font-size: 2vw;
   margin: 0;
   font-weight: 400;
   line-height: 110%;
@@ -116,7 +99,7 @@ body {
 }
 
 .small-description {
-  font-size: 1vw;
+  font-size: 0.8vw;
   font-weight: 400;
   margin: 0;
 }

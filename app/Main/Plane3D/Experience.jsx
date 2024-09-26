@@ -14,12 +14,12 @@ export const Experience = () => {
   return (
     <Canvas camera={{ position: [2, 2, 5], fov: 35 }}>
         <Suspense >
-            <Float>
+            <Float floatingRange={0.5} >
                 <Model />
             </Float>
         </Suspense>
         <Environment preset="studio" environmentIntensity={0.75} />
-        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} enableRotate={true} enablePan={false} />
+        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} enableRotate={false} enablePan={false} />
         <ContactShadows scale={50} position={[0, -2, 0]} blur={1} far={10} opacity={0.5} />
     </Canvas>
   );
